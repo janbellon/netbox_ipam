@@ -1,0 +1,12 @@
+services:
+  netbox_ipam:
+    ports:
+      - 9000:9000
+    build: .
+    networks:
+      - caddy
+    container_name: netbox_ipam
+    restart: unless-stopped
+    environment:
+      NETBOX_URL: https://netbox.example.com
+      NETBOX_TOKEN: replaceme
